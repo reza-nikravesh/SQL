@@ -69,4 +69,27 @@ ALTER TABLE Employee
 ADD FOREIGN KEY(organization_name) REFERENCES Organization(name);
 -- ************************************************
 ALTER TABLE Organization
-ADD FOREIGN KEY(manager_id) REFERENCES Employee(id)
+ADD FOREIGN KEY(manager_id) REFERENCES Employee(id);
+-- ************************************************
+CREATE TABLE Category(
+    name VARCHAR(25) NOT NULL UNIQUE,
+    description VARCHAR(250),
+    PRIMARY KEY(name)
+);
+-- ************************************************
+CREATE TABLE Product(
+    id AUTOINCREMENT NOT NULL UNIQUE,
+    name VARCHAR(25),
+    category_name VARCHAR(25),
+    photo VARCHAR(250) NOT NULL,
+    vendor_id VARCHAR(25) NOT NULL,
+    price NUMBER,
+    description VARCHAR(250),
+    PRIMARY KEY(id)
+);
+-- ************************************************
+ALTER TABLE Product
+ADD FOREIGN KEY(category_name) REFERENCES Category(name);
+-- ************************************************
+ALTER TABLE Product
+ADD FOREIGN KEY(vendor_id) REFERENCES Vendor(id);
