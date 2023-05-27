@@ -108,8 +108,8 @@ CREATE TABLE Customer(
 -- ************************************************
 CREATE TABLE Order(
     id AUTOINCREMENT NOT NULL UNIQUE,
-    customer_id VARCHAR(25),
-    product_id VARCHAR(25),
+    customer_id INT,
+    product_id INT,
     order_number NUMBER NOT NULL,
     delivery_date DATE,
     province_name VARCHAR(25) NOT NULL,
