@@ -39,7 +39,6 @@ CREATE TABLE JobPosition(
 CREATE TABLE Organization(
     name VARCHAR(25) NOT NULL UNIQUE,
     description VARCHAR(250),
-    manager_id VARCHAR(25),
     PRIMARY KEY(name)
 );
 -- ************************************************
@@ -67,9 +66,6 @@ ADD FOREIGN KEY(job_position_name) REFERENCES JobPosition(name);
 -- ************************************************
 ALTER TABLE Employee
 ADD FOREIGN KEY(organization_name) REFERENCES Organization(name);
--- ************************************************
-ALTER TABLE Organization
-ADD FOREIGN KEY(manager_id) REFERENCES Employee(id);
 -- ************************************************
 CREATE TABLE Category(
     name VARCHAR(25) NOT NULL UNIQUE,
