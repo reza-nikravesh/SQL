@@ -14,7 +14,7 @@ ALTER TABLE City
 ADD FOREIGN KEY(province_name) REFERENCES Province(name);
 -- ************************************************
 CREATE TABLE Vendor(
-    id INT AUTO_INCREMENT NOT NULL UNIQUE,
+    id AUTOINCREMENT NOT NULL UNIQUE,
     first_name VARCHAR(25),
     last_name VARCHAR(25),
     province_name VARCHAR(25) NOT NULL,
